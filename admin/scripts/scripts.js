@@ -29,21 +29,26 @@ function incrementStock(itemID) {
     data = {
         StockQuantity: stockQuantity + 1
     }
-    settings = {
-        url: "https://" + baseURL + "/api/v2/merchants/" + merchantID + "/items/" + itemID,
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token
-        },
-        data: JSON.stringify(data),
-        async: false
-    }
-    $.ajax(settings);
+    console.log(data);
+    // settings = {
+    //     url: "https://" + baseURL + "/api/v2/merchants/" + merchantID + "/items/" + itemID,
+    //     method: "PUT",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         Authorization: "Bearer " + token
+    //     },
+    //     data: JSON.stringify(data),
+    //     async: false
+    // }
+    // $.ajax(settings);
 }
 
 function submitID() {
     button = document.getElementById("submitID");
     var item = document.getElementById("item");
-    incrementStock(item.value);
+    var itemID = item.value;
+    // if itemID is parent
+    incrementStock(itemID);
+    // else if itemID is not parent
+    // pop up
 }
