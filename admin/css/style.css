@@ -1,0 +1,12 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+input[type=radio]
+{
+  visibility: visible;
+}
