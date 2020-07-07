@@ -106,7 +106,7 @@ function submitVariantID() {
                 async: false
             }
             $.ajax(settings).done(function(response) {
-                console.log("Done!");
+                toastr.success("Stock Incremented!","Success");
             });
             break;
         }
@@ -115,8 +115,5 @@ function submitVariantID() {
     popup.classList.add("hide");
     popup.classList.remove("show");
 }
-
-
-
 //83d9c73f-8b2f-4f36-a7bc-1b4c81f3bb90
 //18d7a59b-4344-4cb6-b672-5b6602cf0068
