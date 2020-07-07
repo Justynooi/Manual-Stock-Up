@@ -36,7 +36,15 @@ function incrementStock(itemID) {
         for (var i = 1; i <= children.length; i++) {
             variant = "variant" + i
             input = input + "<div>\n" + "<input type=\"radio\" id=\"" + variant + "\" name=\"variant\" value=\"" + children[i-1].ID + "\">\n"
-            input = input + "<label for=\"" + variant + "\">" + children[i - 1].Variants[0].Name + "</label>\n" + "</div><br>\n"
+            input = input + "<label for=\"" + variant + "\">";
+            for (var j = 1; j <= children[i-1].Variants.length; j++) {
+                if (j == children[i-1].Variants.length) {
+                    input = input + children[i-1].Variants[j-1].Name;
+                } else {
+                    input = input + children[i-1].Variants[j-1].Name + " - ";
+                }
+            }
+            input = input + "</label>\n" + "</div><br>\n";
         }
         input = input + "<button id=\"variantID\" onclick=\"submitVariantID()\">Submit</button>"
         var popup = document.getElementById("popup");
